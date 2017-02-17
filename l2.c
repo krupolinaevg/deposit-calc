@@ -1,6 +1,14 @@
 #include<stdio.h>	
 	
 	
+int vv(int v)
+{
+	if(v<10)
+	printf("ERROR");
+	return v;
+}
+
+
 	
 int main()
 {
