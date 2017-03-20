@@ -1,66 +1,69 @@
-#include<stdio.h>	
-	
-	
-int vv(int* v){
-    if(*v<10)
-    printf("ERROR");
-    return 1;
-    }
+#include <stdio.h>
 
-int ss(int* s, int* v){
+void vv(int* srok, int*  vklad){
+    if (*srok   > 365)
+        printf("ERROR\n");
+    if (*vklad < 10000)
+        printf("ERROR\n");
 
-    int o;
-	
-	if(*v<100){
-        if(*s<0){
-        printf("ERROR");
-        }
-        if(*s<30){
-            o=*v*0.9;
-            
-	    }
-	    if((*s<120)&&(*s>30)){
-            o=*v*1.02;
-	    }
-        if((*s<240)&&(*s>120)){
-            o=*v*1.06;
-        }
-        if((*s>240)&&(*s<366)){
-            o=*v*1.12;
-        }
-        }
-		 
-	if(*v>100){
-        if(*s<30){
-            o=*v*0.9;
-        }
-        if((*s<120)&&(*s>30)){
-            o=*v*1.02;
-        }
-        if((*s<240)&&(*s>120)){
-            o=*v*1.06;
-        }
-        if((*s>240)&&(*s<366)){
-            o=1.12;
-    }
-	}
-	return o;
-}		
-int main()
-{
-	int v,s;
-	int vvv,sss;
-		
-	printf("Vvedite razmer vklada(v tisichax):");
-	scanf("%d",&v);
-	printf("Vvedite srok(v dnyah):");
-	scanf("%d",&s);
-	
-	vvv=vv(&v);
-	printf("%d\n",vvv);
-	
-	sss=ss(&s,&v);
-	printf("%d\n",sss);
-	
-	return 0;
 }
+
+int ss(int* srok, int* vklad){
+
+    int o = 0;
+
+    if(*vklad < 100000){
+        if(*srok <= 30){
+            o = *vklad * 0.9;
+        }
+        else if((*srok >= 31)  && (*srok <= 120)){
+            o = *vklad  * 1.02;
+        }
+        else if((*srok  >= 121)  && (*srok <= 240)){
+            o = *vklad * 1.06;
+        }
+        else if((*srok  >= 241)  && (*srok  <= 365)){
+            o = *vklad * 1.12;
+        }
+    }
+
+    if(*vklad > 100000){
+        if(*srok  <= 30){
+            o = *vklad  * 0.9;
+        }
+        else if((*srok >= 31)  && (*srok  <= 120)){
+            o = *vklad * 1.03;
+        }
+        else if((*srok  >= 121)  && (*srok  <= 240)){
+            o = *vklad * 1.08;
+        }
+        else if((*srok  >= 241)  && (*srok <= 365)){
+            o = *vklad * 1.15;
+        }
+    }
+
+    return o;
+}
+
+
+int main(){
+
+    int srok, vklad;
+    int rez;
+
+
+
+    printf("Enter srok vklada\t");
+    scanf("%d", &srok);
+    printf("Enter razmer vklada\t");
+    scanf("%d", &vklad);
+    
+    vv(&srok, &vklad);
+    rez=ss(&srok, &vklad);
+
+
+    printf("%d\n",rez);
+
+    return 0;
+}
+ 
