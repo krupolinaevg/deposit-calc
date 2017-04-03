@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include"deposit.h"
 
 void vv(int* srok, int*  vklad){
     if (*srok   > 365)
@@ -45,25 +45,3 @@ int ss(int* srok, int* vklad){
     return o;
 }
 
-
-int main(){
-
-    int srok, vklad;
-    int rez;
-
-
-
-    printf("Enter srok vklada\t");
-    scanf("%d", &srok);
-    printf("Enter razmer vklada\t");
-    scanf("%d", &vklad);
-    
-    vv(&srok, &vklad);
-    rez=ss(&srok, &vklad);
-
-
-    printf("%d\n",rez);
-
-    return 0;
-}
- 
