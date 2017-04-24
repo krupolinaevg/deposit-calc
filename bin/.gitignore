@@ -1,1 +1,3 @@
-main.o deposit.o deposit-calc
+ deposit-calc
+ deposit_calc_test
+ deposit_calc_test_validation
