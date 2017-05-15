@@ -65,7 +65,7 @@ CTEST(suite, TEST_DEPOSIT_7){
 }
 
 CTEST(suite, TEST_DEPOSIT_8){
-    const int  result = 206999;
+    const int  result = 206997;
     int srok= 300;
     int vklad = 180000;
     int real_result = ss(&srok,&vklad);
