@@ -1,5 +1,5 @@
 language: c
 compiler: gcc
 script: 
--make
--./bin/deposit_calc_test  
+- make
+- bin/deposit_calc_test  
