@@ -2,4 +2,5 @@ language: c
 compiler: gcc
 script: 
 - make
-- bin/deposit_calc_test  
+- bin/deposit_calc_test
+- bin/deposit_calc_test_validation    
